@@ -23,8 +23,8 @@ class App extends Component {
     this.setState({close:true})
   }
   componentDidMount(){
-    setTimeout(() => this.setState({start: false}),6000)
-    setTimeout(() => this.setState({zIndex: '-1'}),8000)
+    setTimeout(() => this.setState({start: false}),7000)
+    setTimeout(() => this.setState({zIndex: '-1'}),9000)
   }
   render(){
     let {backgroundImage,close} = this.state

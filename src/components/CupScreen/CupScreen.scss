@@ -23,10 +23,13 @@
         &-middle {
             @include layer;
             top: 0;
+            background-size: 110% 100%;
         }
         &-top {
             @include layer;
             top: -40%;
+            background-size: 105% 105%;
+
         }
     }
 }
