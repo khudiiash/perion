@@ -1,0 +1,99 @@
+
+@mixin side {
+    position: absolute;
+    height: 100%;
+    background-repeat: no-repeat;
+    top: 0;
+}
+@mixin layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+@mixin logo {
+    width: 200px;
+    height: 200px;
+}
+.one-game-screen {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    
+    &__crowd-left {
+        @include side;
+        width: 100%;
+        left:  0;
+        &-img {
+            @include side;
+            background-size: 90vw 115vh;
+            background-position-y: -15vh;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__crowd-right {
+        @include side;
+        width: 95%;
+        right: 0;
+        &-img {
+            @include side;
+            background-size: 100vw 115vh;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__central-text {
+        @include layer;
+        font-family: 'DIN';
+        font-size: 50px;
+        font-weight: 900;
+        color: white;
+        text-align: center;
+        top: 25%;
+        text-shadow: 5px 0px 25px rgb(0,0,0), 
+                        15px 5px 15px #000,
+                        0px 5px 5px #000;
+        &-one {
+            height: 165px;
+            font-size: 165px;
+            
+        }
+        &-game {
+            height: 135px;
+            font-size: 115px;
+            position: relative;
+            top: -20px;
+        }
+        &-to-glory {
+            height: 65px;
+            font-size: 65px;
+            position: relative;
+            top: -50px;
+        }
+    }
+    &__timbers {
+        position: absolute;
+        left: 10%;
+        top: 30%;
+        &-logo {
+            width: 250px;
+            height: 250px;
+        }
+    }
+    &__dallas {
+        position: absolute;
+        right: 10%;
+        top: 30%;
+
+        &-logo {
+            width: 250px;
+            height: 250px;
+        }
+
+
+
+
+    }
+
+}

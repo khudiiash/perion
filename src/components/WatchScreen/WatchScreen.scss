@@ -1,0 +1,179 @@
+
+
+@mixin layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+@mixin button {
+            
+    &-border {
+        width: 75px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 3px solid white;
+        cursor: pointer;
+        transition: 100ms;
+        &:hover > &-circle {
+            width: 45px;
+            height: 45px;
+        }
+        &:hover {
+            width: 80px;
+            height: 80px;
+        }
+        &:hover &-circle-plus-vertical{
+            height: 25px;
+        }
+        &:hover &-circle-plus-horizontal{
+            width: 25px;
+        }
+
+        &-circle {
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 0, 0, 0.705);
+            border-radius: 50%;
+            border: 4px solid white;
+            transition: 200ms;
+            &-triangle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                transition: 400ms;
+                transform: rotate(90deg);
+                position: relative;
+                left: 8%;
+                pointer-events: none;
+                
+                &-icon {
+                    position: relative;
+                    background-color: white;
+                    text-align: left;
+                
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background-color: inherit;
+                }
+                &,
+                &:before,
+                &:after {
+                    width:  1em;
+                    height: 1em;
+                    border-top-right-radius: 30%;
+                }
+                
+                & {
+                    transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+                }
+                &:before {
+                    transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+                }
+                &:after {
+                    transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+                }
+                
+            }
+        }
+            
+            &-plus {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                transition: 400ms;
+                &-vertical {
+                    background: #fff;
+                    height: 35px;
+                    width: 3px;
+                    border-radius: 5px;
+                    position: absolute;
+                    transition: 150ms;
+                }
+                &-horizontal {
+                    background: #fff;
+                    width: 35px;
+                    height: 3px;
+                    border-radius: 5px;
+                    transition: 150ms;
+
+                }
+            }
+        }
+
+    }
+}
+.watch-screen {
+    @include layer;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    z-index: 0;
+    &-darken {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        transition: background 500ms;
+    }
+
+    &__video {
+        position: absolute;
+        left: 20%;
+        top:20%;
+        width: 60vw;
+        height: auto;   
+        z-index: 0;
+        transition: 500ms;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__player {
+            position: absolute;
+        }
+        &__play-btn {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+            cursor: pointer;
+            transition: 500ms;
+            @include button;
+    
+        }
+    }
+    
+    &__watch-btn {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        right: -75px;
+        top: -50px;
+        font-family: 'DIN';
+        color: white;
+        font-size: 20px;
+        z-index: 1;
+        @include button;
+        
+
+        &__text {
+            margin-top: 5px;
+            transition: 300ms;
+        }
+    }
+    
+}

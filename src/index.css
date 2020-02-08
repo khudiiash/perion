@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'DIN';
+    src: local('DIN'), url(./assets/fonts/DINNextLTPro-Heavy.otf) format('opentype');
+  }
+.one-game-screen__central-text {
+    font-family: 'DIN';
+}
