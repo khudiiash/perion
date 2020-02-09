@@ -1,8 +1,11 @@
 import React from 'react';
 import './OneGameScreen.scss'
-import {crowdLeft,crowdRight} from '../../assets'
-import TimbersLogo from '../../assets/timbers.png'
-import DallasLogo from '../../assets/dallas.png'
+import {
+    timbers as TimbersLogo, 
+    dallas as DallasLogo, 
+    crowdLeft, 
+    crowdRight
+} from '../../assets'
 
 import {useSpring, animated} from 'react-spring'
 import * as easings from 'd3-ease'
@@ -10,6 +13,7 @@ import * as easings from 'd3-ease'
 const OneGameScreen = ({start,zIndex}) => {
     let crowdLeftImg = `url(${crowdLeft})`
     let crowdRightImg = `url(${crowdRight})`
+
     // Left Crowd Animation
     let moveLeftCrowd = useSpring({
         to: {left: start ? '0' : '-100%'},

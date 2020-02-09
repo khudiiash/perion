@@ -13,21 +13,21 @@ const CupScreen = () => {
     let cupHoisting = useSpring({
         to: {top: '0',backgroundImage:cupImg},
         from: {top: '100%'},
-        config: {  delay: 1000, duration: 1400, easing: easings.easeCubicOut}})
+        config: {  duration: 1000, easing: easings.easeLinear}})
     let confettiHoisting = useSpring({
         to: {top: '60%',backgroundImage:confettiImg},
         from: {top: '100%'},
-        config: { delay: 1300,mass: 22,friction: 6, tension: 15, easing: easings.easeQuad},
+        config: { mass: 22,friction: 5, tension: 15, easing: easings.easeQuad},
     })
     let confettiHoisting1 = useSpring({
         to: {top: '30%',backgroundImage:confettiImg},
         from: {top: '100%'},
-        config: { delay: 1400,mass: 25,friction: 2, tension: 15, easing: easings.easeQuad},
+        config: { mass: 20,friction: 2, tension: 12, easing: easings.easeQuad},
     })
     let confettiHoisting2 = useSpring({
         to: {top: '0',backgroundImage:confettiImg},
         from: {top: '100%'},
-        config: { delay: 1700,mass: 10,friction: 10, tension: 15, easing: easings.easeQuad},
+        config: { mass: 25,friction: 3, tension: 15, easing: easings.easeQuad},
     })
     return (
         <div className='cup-screen'>
