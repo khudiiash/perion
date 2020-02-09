@@ -32,7 +32,7 @@ const CupScreen = () => {
     return (
         <div className='cup-screen'>
             <animated.div style={cupHoisting} className="cup-screen__cup"></animated.div>
-            <animated.div style={confettiHoisting} className="cup-screen__confetti"><div></div></animated.div>
+            <animated.div style={confettiHoisting} className="cup-screen__confetti"></animated.div>
             <animated.div style={confettiHoisting1} className="cup-screen__confetti-middle"></animated.div>
             <animated.div style={confettiHoisting2} className="cup-screen__confetti-top"></animated.div>
         </div>
